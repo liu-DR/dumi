@@ -1,0 +1,106 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /Users/liushuai/Documents/project/React/dumi-2/node_modules/.bin:/Users/liushuai/Documents/project/React/node_modules/.bin:/Users/liushuai/Documents/project/node_modules/.bin:/Users/liushuai/Documents/node_modules/.bin:/Users/liushuai/node_modules/.bin:/Users/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/Users/liushuai/.npm/_npx/8be11adb9057e090/node_modules/.bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.17.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/dumi: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141517:19)
+      at Object.onceWrapper (node:events:627:28)
+      at ClientRequest.emit (node:events:513:28)
+      at TLSSocket.emitRequestTimeout (node:_http_client:814:9)
+      at Object.onceWrapper (node:events:627:28)
+      at TLSSocket.emit (node:events:525:35)
+      at TLSSocket.Socket._onTimeout (node:net:526:8)
+      at listOnTimeout (node:internal/timers:559:17)
+      at processTimers (node:internal/timers:502:7)
+
+npm manifest: 
+  {
+    "name": "dumi-2",
+    "version": "0.0.1",
+    "description": "组件开发-2",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+      "start": "npm run dev",
+      "dev": "dumi dev",
+      "build": "father build",
+      "build:watch": "father dev",
+      "docs:build": "dumi build",
+      "prepare": "husky install && dumi setup",
+      "doctor": "father doctor",
+      "lint": "npm run lint:es && npm run lint:css",
+      "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
+      "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
+      "prepublishOnly": "father doctor && npm run build"
+    },
+    "authors": [
+      "liudrgk@163.com"
+    ],
+    "license": "MIT",
+    "files": [
+      "dist"
+    ],
+    "commitlint": {
+      "extends": [
+        "@commitlint/config-conventional"
+      ]
+    },
+    "lint-staged": {
+      "*.{md,json}": [
+        "prettier --write --no-error-on-unmatched-pattern"
+      ],
+      "*.{css,less}": [
+        "stylelint --fix",
+        "prettier --write"
+      ],
+      "*.{js,jsx}": [
+        "eslint --fix",
+        "prettier --write"
+      ],
+      "*.{ts,tsx}": [
+        "eslint --fix",
+        "prettier --parser=typescript --write"
+      ]
+    },
+    "publishConfig": {
+      "access": "public"
+    },
+    "peerDependencies": {
+      "react": ">=16.9.0",
+      "react-dom": ">=16.9.0"
+    },
+    "devDependencies": {
+      "@commitlint/cli": "^17.1.2",
+      "@commitlint/config-conventional": "^17.1.0",
+      "@umijs/lint": "^4.0.0",
+      "dumi": "^2.0.2",
+      "eslint": "^8.23.0",
+      "father": "^4.1.0",
+      "husky": "^8.0.1",
+      "lint-staged": "^13.0.3",
+      "prettier": "^2.7.1",
+      "prettier-plugin-organize-imports": "^3.0.0",
+      "prettier-plugin-packagejson": "^2.2.18",
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0",
+      "stylelint": "^14.9.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
